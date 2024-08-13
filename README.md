@@ -15,4 +15,4 @@ let the game generate a random word. At the end, the game gives a story to the u
   - Open a terminal.
   - Navigate to the directory where you want to clone the repository.
   - Run this command. ` git clone https://github.com/margaryanani/Mad-Libs.git `
-  
+    
