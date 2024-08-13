@@ -1,4 +1,4 @@
-# Small project for the game of Mad Libs
+# Mini-project for the game of Mad Libs
 ## Introduction
 The game provides 3 templates to choose from, after choosing a template, it gives the corresponding prompts to the user. The user can either enter the words by themselves or
 let the game generate a random word. At the end, the game gives a story to the user with their chosen words.
@@ -32,7 +32,9 @@ The 'madlibs_functions.py' file contains all the functions needed for the main f
     
 After entering a template number, there are two functions that are being executed:
 
-`prompts = get_prompts(template_mapping, prompts_and_categories, template)` and `user_inputs = inputs(prompts, categories)`
+`prompts = get_prompts(template_mapping, prompts_and_categories, template)`
+
+and `user_inputs = inputs(prompts, categories)`.
 
 These functions are in the 'madlibs_functions.py' file.
 
