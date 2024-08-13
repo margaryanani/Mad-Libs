@@ -16,3 +16,36 @@ let the game generate a random word. At the end, the game gives a story to the u
   - Navigate to the directory where you want to clone the repository.
   - Run this command. ` git clone https://github.com/margaryanani/Mad-Libs.git `
     
+## Usage
+
+You need 'madlibs_functions.py', 'madlibs.py' files for this project. 
+The 'madlibs_functions.py' file contains all the functions needed for the main file ('madlibs.py') to be executed. 
+
+## Code Structure
+  'madlibs.py' is the main script that runs the game. It interacts with the user, gathers input, and generates the final story.
+  
+  - The `categories` dictionary contains categories as keys and their values are a list of words within that category. This is for generating a random word if the user enters '?'.
+  - To connect the categories with prompts we have the list `prompts_and_categories`, which consists of tuples, where each tuple has
+            a prompt with its corresponding category.
+  - the `template_mapping` dictionary maps template numbers to lists of indices that correspond to specific prompts.
+  - Then we have an input that lets the user choose one of the three templates. If the user enters anything besides 1,2 or 3, the program keeps asking the user for the right input.
+    
+    After entering a template number, there are two functions that are being executed:
+
+    `prompts = get_prompts(template_mapping, prompts_and_categories, template)` and `user_inputs = inputs(prompts, categories)`
+
+    These functions are in the 'madlibs_functions.py' file.
+
+    #### The overview of the  `get_prompts(template_mapping, prompts_and_categories, num)` function
+
+    Based on the chosen template number (parameter `num`), it finds the template number in the `template_mapping`, takes the list of numbers corresponding to that number, and since those list of numbers are the indices of `prompts_and_categories`, uses them as indices for `prompts_and_categories` to get the prompts and their categories for the chosen template and stores them in a list.
+
+    So now we have the prompts ready for the user.
+
+    #### The overview of the  `user_inputs = inputs(prompts, categories)` function
+
+    This function has an empty list `user_inputs = []` to store the words.
+
+    The function gives the prompts to the user one by one. When the user types '?' to any of the given prompts, the function goes to the `categories` dictionary, finds the corresponding key category for that prompt and from that key category's value's that contains list of words wthin that category, generates a random word.
+
+    Also the `while True` loop prevents the user to leave blank inputs. for Each entered word, it is appened to the `user_inputs` list. 
