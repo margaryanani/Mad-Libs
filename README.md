@@ -29,7 +29,7 @@ The 'madlibs_functions.py' file contains all the functions needed for the main f
   - The `categories` dictionary contains categories as keys and their values are a list of words within that category. This is for generating a random word if the user enters '?'.
   - To connect the categories with prompts we have the list `prompts_and_categories`, which consists of tuples, where each tuple has
             a prompt with its corresponding category.
-  - the `template_mapping` dictionary maps template numbers to lists of indices that correspond to specific prompts.
+  - the `template_mapping` dictionary maps template numbers to lists of indices that correspond to specific prompts from the `prompts_and_categories` list.
   - Then we have a `template` input that lets the user choose one of the three templates. If the user enters anything besides 1,2 or 3, the program keeps asking the user for the right input.
     
 After entering a template number, there are two functions that are being executed:
@@ -42,7 +42,7 @@ These functions are in the 'madlibs_functions.py' file.
 
 - #### The overview of the  `get_prompts(template_mapping, prompts_and_categories, num)` function
 
- Based on the chosen template number (parameter `num`), it finds the template number in the `template_mapping`, takes the list of numbers corresponding to that number, and since those list of numbers are the indices of `prompts_and_categories` that point to the prompts needed for the template,the function uses them as indices to get the prompts and their categories for the chosen template from `prompts_and_categories` and stores them in a list.
+ Based on the chosen template number (parameter `num`, which takes the `template` input in the main file), it finds the template number in the `template_mapping`, takes the list of numbers corresponding to that number, and since those list of numbers are the indices of `prompts_and_categories` that point to the prompts needed for the template,the function uses them as indices to get the prompts and their categories for the chosen template from `prompts_and_categories` and stores them in a list.
 
 So now we have the prompts ready for the user.
 
@@ -53,4 +53,4 @@ Also the `while True` loop prevents the user to leave blank inputs. for Each ent
 
 After those functions are executed the `if` part is used to print the chosen template.
 
-Since the order of the words in the `user_inputs` list are the same as the prompts' order(prompts are given based on the order of the missing words in the template), I just put the words in the text based on the indices of the list.
+Since the order of the words in the `user_inputs` list is the same as the prompts' order (prompts are given based on the order of the missing words in the template), I just put the words in the text based on the indices of the list.
